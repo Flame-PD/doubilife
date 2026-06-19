@@ -1,6 +1,9 @@
 from dataclasses import dataclass
 from typing import List,Optional
 
+from core.condition import judge_condition
+
+
 # effect 格式说明：effect是一个字典，记录某个选项会带来的影响
 # {
 #   "add_traits": ["特质1", "特质2"],   获得新特质
@@ -12,9 +15,7 @@ from typing import List,Optional
 
 # branch 格式说明：branch是一个字典，用来判断某个选项根据不同的特质会引发不同的结果
 # {
-#   "need_traits": ["需要的特质"],
-#   "no_need_traits": ["不能有的特质"],
-#   "flag"
+#   "conditions": {condition字典}
 #   "result_str": "会返回的文本",
 #   "effect": {effect参照上述格式}
 # }
@@ -25,22 +26,18 @@ from typing import List,Optional
 #   "age_limit_max": 年龄上限
 #   "need_traits": ["需要的特质"],
 #   "no_need_traits": ["不能有的特质"],
-#   "is_son": true or false 如果是子事件，就不能直接加入事件池
+#   "need_sx": bool 性别
+#   "is_son": true or false 如果是子事件，就不能直接加入事件池，只用在事件管理
 #}
 
 @dataclass
 class Result:
     branches: List[dict]
-    def judge(self,player):
+    def judge(self,player) -> tuple[Optional[str],Optional[dict]]:
         for branch in self.branches:
-            need = branch["need_traits"]
-            if not all(player.has_trait(t) for t in need):
-                continue
-            no_need=branch["no_need_traits"]
-            if any(player.has_trait(t) for t in no_need):
-                continue
-
-            return branch.get("result_str",""),branch.get("effect",{})
+            conditions = branch["conditions"]
+            if judge_condition(conditions, player):
+                return branch.get("result_str",""),branch.get("effect",{})
         return None,None
 
 
@@ -49,32 +46,29 @@ class Result:
 class Option: #选项类
     text: str #这个选项的文本
     result: Result #结果类，需要判定，判断方法在result内
-    result_str: str
-    effect: dict
-    need_traits:List[str]=None
-    no_need_traits:List[str]=None
+    conditions: dict = None
     sub_event:Optional[str]=None
+    result_str: str=None
+    effect: dict=None
     def if_option(self,player) -> bool:
-        if not all(player.has_trait(t) for t in self.need_traits):
-            return False
-        if any(player.has_trait(t) for t in self.no_need_traits):
+        if not judge_condition(self.conditions, player):
             return False
         return True
-    def get_result(self,player):
+    def get_result(self,player) -> None:
         self.result_str,self.effect = self.result.judge(player)
 
 class Event:
     """事件类定义"""
     def __init__(self,
-                 name: str,
-                 title: str,
-                 text: str,
-                 options: List[Option],
-                 effect: dict,
-                 sub_event: str,
-                 conditions: dict,
-                 weight,
-                 result_option: Option
+                 name: str, #事件名，类id性质，用于在事件集中以名字作为唯一对应
+                 title: str, #事件标题
+                 text: str, #事件内容
+                 options: List[Option], #是一个选项集，选项构成参照以上
+                 conditions: dict, #条件字典，格式参考如上
+                 weight, #
+                 sub_event: str = None, #子事件，默认为无，你可以在这里添加子事件的事件名
+                 result_option: Option = None, #选择的选项
+                 effect: dict = None, #效果
                  ):
         self.name = name
         self.title = title

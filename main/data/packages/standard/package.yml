@@ -1,0 +1,4 @@
+name: "标准事件包"
+id: "standard"
+version: "1.0.0"
+events_file: "events.json"

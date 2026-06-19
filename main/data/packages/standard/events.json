@@ -1,0 +1,300 @@
+{
+    "birth1": {
+        "name": "birth1",
+        "title": "你出生了 - 平凡",
+        "text": "在一个风和日丽的雨天，室内散发着焦灼的气息，呻吟声和踱步声清晰可辨。不算富有也不算贫穷，你的父母怀着激动的心情期待着你的降世。随着一声清晰的啼哭划破雨夜，你出生在这个世界上",
+        "conditions": {
+            "age_limit_min": 0,
+            "age_limit_max": 0
+        },
+        "weight": 256,
+        "options": [
+            {
+                "text": "大声哭闹",
+                "conditions": {},
+                "result": {
+                    "branches": [
+                        {
+                            "conditions": {},
+                            "result_str": "你健康而响亮的哭声让大家都松了口气，产婆预言你将是个活泼好动的孩子。",
+                            "effect": {
+                                "add_traits": ["活泼"]
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "text": "睁开双眼",
+                "conditions": {},
+                "result": {
+                    "branches": [
+                        {
+                            "conditions": {},
+                            "result_str": "尽管你还不适应强光的刺眼，你还是坚持睁开了眼皮，努力打量着这个世界。",
+                            "effect": {
+                                "sub_event": "choose_eye"
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "text": "试说脏话",
+                "conditions": {},
+                "result": {
+                    "branches": [
+                        {
+                            "conditions": {},
+                            "result_str": "尽管刚刚出生，你已经无师自通地学会了一句令人不寒而栗的侮辱性文字，你向这个世界控诉着从娘胎里出来的痛苦。",
+                            "effect": {
+                                "add_traits": ["高素质","天才"]
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "text": "安稳睡觉",
+                "conditions": {},
+                "result": {
+                    "branches": [
+                        {
+                            "conditions": {},
+                            "result_str": "你的哭声很快安静下来，在大人们惊吓之余，你早已经睡得安详，不需要惊天动地，你安安静静地进入了你的角色。",
+                            "effect": {
+                                "add_traits": ["冷静"]
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "birth2": {
+        "name": "birth2",
+        "title": "你出生了 - 贫寒",
+        "text": "直到你发出第一声细碎的哭声，大家才发现你并不是死婴。但也仅此而已，你被粗布做的襁褓裹在怀里，说不上多暖和，你的哥哥姐姐们都是被这块布裹着长大的，你没有哭的太久，穷人的孩子早当家。好在上帝为你关上一扇门，至少会给你钻一个墙眼，于是你生来虽然没有金银珠宝，但你带来了无与伦比的天赋：",
+        "conditions": {
+            "age_limit_min": 0,
+            "age_limit_max": 0
+        },
+        "weight": 48,
+        "options": [
+            {
+                "text": "怪物一般的头脑",
+                "conditions": {},
+                "result": {
+                    "branches": [
+                        {
+                            "conditions": {},
+                            "result_str": "你的头脑会是你最佳的武器，你的脑海中闪耀着亟待被知识侵犯的渴望。",
+                            "effect": {
+                                "add_traits": ["天才","贫穷"]
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "text": "极具爆发力的肉体",
+                "conditions": {},
+                "result": {
+                    "branches": [
+                        {
+                            "conditions": {},
+                            "result_str": "你将在这片泥沼中磨练出一身惊世骇俗的体能。",
+                            "effect": {
+                                "add_traits": ["强壮","贫穷"]
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "text": "准到靠北的直觉",
+                "conditions": {},
+                "result": {
+                    "branches": [
+                        {
+                            "conditions": {},
+                            "result_str": "你的心里一直有一个声音陪伴你，它总是给予你不会错的忠告，无论是避开风险还是抓住机会，你都能本能般地做到。",
+                            "effect": {
+                                "add_traits": ["第六感","贫穷"]
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "text": "刀枪不入的巨大铁臀",
+                "conditions": {},
+                "result": {
+                    "branches": [
+                        {
+                            "conditions": {},
+                            "result_str": "在坐坏了家里的第四把椅子之后，你总算了解到自己的真正优势。……或许不被人看好，但你确确实实拥有了一项无人能及的天赋。",
+                            "effect": {
+                                "add_traits": ["铁屁股","贫穷"]
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "birth3":{
+        "name": "birth3",
+        "title": "你出生了 - 富有",
+        "text": "你躺在用最好的丝绸和绒羽铺垫的摇篮里，有十个仆人随时随地照顾你。如果说口含金钥匙出生是一种天赋，那你已经在这方面登峰造极了。抓周仪式上，你的手伸向了：",
+        "conditions": {
+            "age_limit_min": 0,
+            "age_limit_max": 0
+        },
+        "weight": 48,
+        "options": [
+            {
+                "text": "父亲的全球限量黑卡",
+                "conditions": {},
+                "result": {
+                    "branches": [
+                        {
+                            "conditions": {},
+                            "result_str": "家人们爆发出一阵欢呼，显然你生来就与财富绑定在一起，这张黑卡理所当然地属于你，即便你还是个在摇篮里嘬手指的婴儿。",
+                            "effect": {
+                                "add_traits": ["挥金如土","富二代"]
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "text": "母亲的顶级收藏名画",
+                "conditions": {},
+                "result": {
+                    "branches": [
+                        {
+                            "conditions": {},
+                            "result_str": "你触摸着刻着浮夸雕文的画框时，家人们对你露出了满意的微笑，你似乎证明了自己不单单是个纨绔子弟，而是天生有着艺术素养的满级人类。",
+                            "effect": {
+                                "add_traits": ["艺术感知","富二代"]
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "text": "令人食指大动的名贵菜肴",
+                "conditions": {},
+                "result": {
+                    "branches": [
+                        {
+                            "conditions": {},
+                            "result_str": "趋向食物是生物的本能，更何况你只是个小婴儿，谁能苛责你呢？大人们摸了摸你的头，却仍有人在后方窃窃私语。",
+                            "effect": {
+                                "add_traits": ["大胃袋","富二代"]
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "text": "女仆顺手留在那里的擦灰抹布",
+                "conditions": {},
+                "result": {
+                    "branches": [
+                        {
+                            "conditions": {},
+                            "result_str": "全场瞬间变得哑然无声，你只是觉得湿湿的抹布凉凉的很舒服。父亲把你抱了起来，眼里是尽力掩饰住的失望。不过没关系，抓周仪式本来就是封建迷信罢了，父亲扯走了那块抹布，把他的金表塞进你的手里。",
+                            "effect": {
+                                "add_traits": ["劳动专精"]
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "choose_eye": {
+        "name": "choose_eye",
+        "title": "眼睛颜色",
+        "text": "你尽力瞪大你的双眼，人们看清了你眼睛的颜色",
+        "conditions": {
+            "is_son": 1
+        },
+        "weight": 256,
+        "options": [
+            {
+                "text": "褐色",
+                "conditions": {},
+                "result": {
+                    "branches": [
+                        {
+                            "conditions": {},
+                            "result_str": "没什么特别的，不过是这个星球上最常见的瞳色罢了。即便如此你仍然睁开了双眼，贪婪地接收着视网膜为你提供的光敏信息。",
+                            "effect": {
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "text": "蓝色",
+                "conditions": {},
+                "result": {
+                    "branches": [
+                        {
+                            "conditions": {},
+                            "result_str": "这个瞳色预示着你不平凡的血脉，也许你是混血，也许你是返祖，很多人喜欢你双眼的颜色，但此时，这过于淡薄的瞳色没能很好地阻挡产房亮眼的灯光。",
+                            "effect": {
+                                "add_traits": ["高颜值","畏光"]
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "text": "血红色",
+                "conditions": {},
+                "result": {
+                    "branches": [
+                        {
+                            "conditions": {},
+                            "result_str": "那双眼睛，毋庸置疑。你是宇智波家族的血脉，你的母亲在难产中去世，而你的父亲也在悲痛中断气。而在啼哭声中你接受了自己的身世，睁开了那双能看穿一切的眼睛。",
+                            "effect": {
+                                "add_traits": ["写轮眼","孤儿"]
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "text": "彩虹色",
+                "conditions": {},
+                "result": {
+                    "branches": [
+                        {
+                            "conditions": {
+                                "need_sx": 1
+                            },
+                            "result_str": "你那五彩斑斓的胎毛和那在黑暗中仍能发光的彩虹色双眸让在场的人们无不为之倾倒。你一张口，风精灵就为你喝彩；你一啼哭，全医院的医生护士都要来安抚你。一位有着一米九的身高和两米二腿长的霸道总裁在你的襁褓夹层留下了一张字条：“女人，你这是在玩火。”",
+                            "effect": {
+                                "add_traits": ["玛丽苏"]
+                            }
+                        },
+                        {
+                            "conditions": {
+                                "need_sx": 0
+                            },
+                            "result_str": "你那五彩斑斓的胎毛和那在黑暗中仍能发光的彩虹色双眸让在场的人们无不为之倾倒。你一张口，风精灵就为你喝彩；你一啼哭，全医院的医生护士都要来安抚你。一位有着三位数胸臀围和个位数腰围的高冷御姐在你的襁褓夹层留下了一张字条：“你会属于我，男人。”",
+                            "effect": {
+                                "add_traits": ["玛丽苏"]
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+
+    }
+}

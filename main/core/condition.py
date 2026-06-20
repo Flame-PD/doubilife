@@ -1,4 +1,5 @@
 from core.player import *
+import random
 
 # condition 格式说明
 # {
@@ -32,5 +33,9 @@ def judge_condition(conditions:dict, player:GamePlayer) -> bool:
     if "no_need_traits" in conditions:
         no_need = conditions["no_need_traits"]
         if any(player.has_trait(t) for t in no_need):
+            return False
+    if "probability" in conditions:
+        x_prob = random.randint(0,100)
+        if x_prob > conditions["probability"]:
             return False
     return True

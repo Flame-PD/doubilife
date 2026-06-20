@@ -1,4 +1,4 @@
-from dataclasses import dataclass
+from dataclasses import dataclass,field
 from typing import List,Optional
 
 from core.condition import judge_condition
@@ -33,12 +33,12 @@ from core.condition import judge_condition
 @dataclass
 class Result:
     branches: List[dict]
-    def judge(self,player) -> tuple[Optional[str],Optional[dict]]:
+    def judge(self,player) -> tuple[str,dict]:
         for branch in self.branches:
             conditions = branch["conditions"]
             if judge_condition(conditions, player):
                 return branch.get("result_str",""),branch.get("effect",{})
-        return None,None
+        return "", {}
 
 
 
@@ -48,8 +48,8 @@ class Option: #选项类
     result: Result #结果类，需要判定，判断方法在result内
     conditions: dict = None
     sub_event:Optional[str]=None
-    result_str: str=None
-    effect: dict=None
+    result_str: str=""
+    effect: dict= field(default_factory=dict)
     def if_option(self,player) -> bool:
         if not judge_condition(self.conditions, player):
             return False
@@ -85,11 +85,11 @@ class Event:
         self.effect = self.result_option.effect
     def apply_effect(self,player,events_queue):
         if "add_traits" in self.effect:
-            player.add_traits(self.effect["add_traits"])
-            print(f"获得特质:{self.effect["add_traits"]}")
+            has_add=player.add_traits(self.effect["add_traits"])
+            print(f"获得特质:{has_add}")
         if "remove_traits" in self.effect:
-            player.remove_traits(self.effect["remove_traits"])
-            print(f"失去特质:{self.effect["remove_traits"]}")
+            has_remove=player.remove_traits(self.effect["remove_traits"])
+            print(f"失去特质:{has_remove}")
         if "age_up" in self.effect:
             player.age_up(self.effect["age_up"])
             print(f"成长了: {self.effect["age_up"]} 岁")

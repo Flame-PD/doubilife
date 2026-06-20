@@ -2,3 +2,6 @@
 # 游戏加载时会按此顺序加载包
 packages:
   - standard
+
+
+#  - test

@@ -6,6 +6,18 @@ from core.player import *
 from blessed import Terminal
 term = Terminal()
 
+def tr(text:str,player:GamePlayer) -> str: #tr = text_replace
+    replacements={
+        "@a": str(player.age),
+        "@n": term.cyan(player.name),
+        "@s": "女" if player.sx else "男",
+        "@x": "她" if player.sx else "他"
+    }
+    return_text = text
+    for key, value in replacements.items():
+        return_text = return_text.replace(key,value)
+    return return_text
+
 class Game:
     def __init__(self):
         self.event_container = EventContainer()
@@ -16,11 +28,20 @@ class Game:
             print(term.green("我的逗比人生"))
             print("1>开始游戏")
             print("2>待扩展")
-            num_input=input(term.green(">"))
+            while True:
+                num_input=input(term.green(">")).strip()
+                if num_input.isdigit():
+                    break
             match int(num_input):
                 case 1:
                     self.game_init()
-                    self.game_loop(input(term.green("请输入你的名字>")),(1 if input(term.green("请输入性别,0为男，1为女>")).strip()=="1" else 0))
+                    name=input(term.green("请输入你的名字>").strip())
+                    if name=="" :
+                        name="你"
+                    sx=(1 if input(term.green("请输入性别,0为男，1为女>")).strip() == "1" else 0)
+                    self.game_loop(name,sx)
+                case 2:
+                    return
                 case _:
                     continue
     def game_init(self):
@@ -99,9 +120,9 @@ class Game:
         player = GamePlayer(player_name,player_sx,[],{},0)
         while True:
             if player.has_trait("死亡"):
-                print(term.red("你的故事到此结束……"))
+                print(term.red(tr("@n的故事到此结束……",player)))
                 break
-            self.event_container.update(player)
+            # self.event_container.update(player)
             #ce = self.event_container.event()#ce = current_event
             print("库中事件：", list(self.event_container.event_library.library.keys()))
             self.event_container.update(player)
@@ -109,8 +130,8 @@ class Game:
             ce = self.event_container.event()
             print("获取到的事件：", ce.name)
             print("%"+"="*(self.window_width-2)+"+")
-            print(term.bold_yellow(ce.title))
-            print(ce.text)
+            print(term.bold_yellow(tr(ce.title,player)))
+            print(tr(ce.text,player))
             available_options = []
             option_id = 0
             for option in ce.options:
@@ -121,30 +142,33 @@ class Game:
                 option_id += 1
                 match option_id % 4:
                     case 1:
-                        print(f"{option_id}. {term.green(text)}")
+                        print(f"{option_id}. {term.green(tr(text,player))}")
                     case 2:
-                        print(f"{option_id}. {term.yellow(text)}")
+                        print(f"{option_id}. {term.yellow(tr(text,player))}")
                     case 3:
-                        print(f"{option_id}. {term.cyan(text)}")
+                        print(f"{option_id}. {term.cyan(tr(text,player))}")
                     case _:
-                        print(f"{option_id}. {term.magenta(text)}")
-            print("%" + "="*(self.window_width-2) + "%")
+                        print(f"{option_id}. {term.magenta(tr(text,player))}")
+            print("+" + "-"*(self.window_width-2) + "+")
             print(term.green("名字: ")+player_name+term.yellow("  年龄: ")+f"{player.age}"+term.cyan("  性别: ")+("女" if player.sx else "男"))
             for trait in player.traits:
                 print("["+term.bold_cyan(trait)+"]",end=(" "*(9-len(trait))))
             print("")
+            print("%" + "=" * (self.window_width - 2) + "%")
             while True:
-                choice = input(term.green(">"))
+                choice = input(term.green(">")).strip()
                 if choice.isdigit() and 0 < int(choice) <= option_id:
                     break
             choice_option = available_options[int(choice)-1]
             ce.choose_option(choice_option,player)
-            print(ce.result_option.result_str)
+            print(tr(ce.result_option.result_str,player))
             ce.apply_effect(player,self.event_container.event_queue)
             ce.add_event(self.event_container.event_queue)
             term.inkey()
             if self.event_container.event_queue.empty():
                 player.age_up(1)
+            if ce.name!="death":
+                self.event_container.remove_event(ce.name)
 
 
 
@@ -153,7 +177,7 @@ class Game:
 
 
     def start(self):
-        print(term.green("我的逗比人生")+ term.yellow("personal-remake")+ term.cyan("v0.0.1"))
+        print(term.green(" 我的逗比人生 ")+ term.yellow(" personal-remake ")+ term.cyan(" v0.1.5 "))
         print("请按任意键继续...>")
         with term.cbreak():
             term.inkey()

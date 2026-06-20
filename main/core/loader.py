@@ -1,4 +1,4 @@
-import json
+import json5
 import yaml
 import os
 from typing import List, Dict, Any
@@ -21,7 +21,7 @@ class PackageLoader:
             if meta is None:
                 continue
 
-            events_file = meta.get("events_file", "events.json")
+            events_file = meta.get("events_file", "events.json5")
             events_path = os.path.join(self.packages_dir, pid, events_file)
 
             # 3. 读事件的 JSON 文件，解析成 Event 对象
@@ -42,7 +42,7 @@ class PackageLoader:
 
     def _parse_events_file(self, path: str) -> List[Event]:
         with open(path, 'r', encoding='utf-8') as f:
-            data = json.load(f)
+            data = json5.load(f)
 
         events = []
         for event_id, raw in data.items():
@@ -67,5 +67,6 @@ class PackageLoader:
             text=raw.get("text", ""),
             options=options,
             conditions=raw.get("conditions", {}),
-            weight=raw.get("weight", 1)
+            weight=raw.get("weight", 1),
+            sub_event=raw.get("sub_event", None),
         )

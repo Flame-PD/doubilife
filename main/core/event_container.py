@@ -61,7 +61,8 @@ class EventLibrary:
         for event in events:
             if event.name not in self.library:
                 self.library[event.name] = event
-
+    def remove_event(self,event_name:str) -> None:
+        self.library.pop(event_name)
     def clear(self) -> None:
         self.library.clear()
 
@@ -115,11 +116,16 @@ class EventContainer:
 
     def get_event(self,event_name:str) -> Optional[Event]:
         return self.event_library.get_event(event_name)
+    def remove_event(self,event_name:str) -> None:
+        self.event_library.remove_event(event_name)
     def event(self) -> Event:
         return_event = self.get_event(self.get_event_name())
-        if return_event is not None:
+        if return_event is None:
+            return_event = self.get_event(self.get_event_name())
+            if return_event is None:
+                return death
             return return_event
-        return death
+        return return_event
     def clear_queue(self) -> None:
         self.event_queue.clear()
     def clear_library(self) -> None:

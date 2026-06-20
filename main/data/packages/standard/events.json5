@@ -1,0 +1,756 @@
+{
+    "birth1": {
+        "name": "birth1",
+        "title": "你出生了 - 平凡",
+        "text": "在一个风和日丽的雨天，室内散发着焦灼的气息，呻吟声和踱步声清晰可辨。不算富有也不算贫穷，@n的父母怀着激动的心情期待着你的降世。随着一声清晰的啼哭划破雨夜，@n出生在这个世界上",
+        "conditions": {
+            "age_limit_min": 0,
+            "age_limit_max": 0
+        },
+        "weight": 256,
+        "options": [
+            {
+                "text": "大声哭闹",
+                "conditions": {},
+                "result": {
+                    "branches": [
+                        {
+                            "conditions": {},
+                            "result_str": "你健康而响亮的哭声让大家都松了口气，产婆预言你将是个活泼好动的孩子。",
+                            "effect": {
+                                "add_traits": ["活泼"]
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "text": "睁开双眼",
+                "conditions": {},
+                "result": {
+                    "branches": [
+                        {
+                            "conditions": {},
+                            "result_str": "尽管你还不适应强光的刺眼，@n还是坚持睁开了眼皮，努力打量着这个世界。",
+                            "effect": {
+                                "sub_event": "choose_eye"
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "text": "试说脏话",
+                "conditions": {},
+                "result": {
+                    "branches": [
+                        {
+                            "conditions": {},
+                            "result_str": "尽管刚刚出生，@n已经无师自通地学会了一句令人不寒而栗的侮辱性文字，你向这个世界控诉着从娘胎里出来的痛苦。",
+                            "effect": {
+                                "add_traits": ["高素质","天才"]
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "text": "安稳睡觉",
+                "conditions": {},
+                "result": {
+                    "branches": [
+                        {
+                            "conditions": {},
+                            "result_str": "@n的哭声很快安静下来，在大人们惊吓之余，@n早已经睡得安详。不需要惊天动地，你安安静静地进入了你的角色。",
+                            "effect": {
+                                "add_traits": ["冷静"]
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "birth2": {
+        "name": "birth2",
+        "title": "你出生了 - 贫寒",
+        "text": "直到你发出第一声细碎的哭声，大家才发现你并不是死婴。但也仅此而已，你被粗布做的襁褓裹在怀里，说不上多暖和，你的哥哥姐姐们都是被这块布裹着长大的，你没有哭的太久，穷人的孩子早当家。好在上帝为你关上一扇门，至少会给你钻一个墙眼，于是你生来虽然没有金银珠宝，但你带来了无与伦比的天赋：",
+        "conditions": {
+            "age_limit_min": 0,
+            "age_limit_max": 0
+        },
+        "weight": 48,
+        "options": [
+            {
+                "text": "怪物一般的头脑",
+                "conditions": {},
+                "result": {
+                    "branches": [
+                        {
+                            "conditions": {},
+                            "result_str": "你的头脑会是你最佳的武器，你的脑海中闪耀着亟待被知识侵犯的渴望。",
+                            "effect": {
+                                "add_traits": ["天才","贫穷"]
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "text": "极具爆发力的肉体",
+                "conditions": {},
+                "result": {
+                    "branches": [
+                        {
+                            "conditions": {},
+                            "result_str": "@n将在这片泥沼中磨练出一身惊世骇俗的体能。",
+                            "effect": {
+                                "add_traits": ["强壮","贫穷"]
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "text": "准到靠北的直觉",
+                "conditions": {},
+                "result": {
+                    "branches": [
+                        {
+                            "conditions": {},
+                            "result_str": "你的心里一直有一个声音陪伴你，它总是给予你不会错的忠告，无论是避开风险还是抓住机会，你都能本能般地做到。",
+                            "effect": {
+                                "add_traits": ["第六感","贫穷"]
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "text": "刀枪不入的巨大铁臀",
+                "conditions": {},
+                "result": {
+                    "branches": [
+                        {
+                            "conditions": {},
+                            "result_str": "在坐坏了家里的第四把椅子之后，@n总算了解到自己的真正优势。……或许不被人看好，但@n确确实实拥有了一项无人能及的天赋。",
+                            "effect": {
+                                "add_traits": ["铁屁股","贫穷"]
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "birth3":{
+        "name": "birth3",
+        "title": "你出生了 - 富有",
+        "text": "你躺在用最好的丝绸和绒羽铺垫的摇篮里，有十个仆人随时随地照顾你。如果说口含金钥匙出生是一种天赋，那你已经在这方面登峰造极了。抓周仪式上，你的手伸向了：",
+        "conditions": {
+            "age_limit_min": 0,
+            "age_limit_max": 0
+        },
+        "weight": 48,
+        "options": [
+            {
+                "text": "父亲的全球限量黑卡",
+                "conditions": {},
+                "result": {
+                    "branches": [
+                        {
+                            "conditions": {},
+                            "result_str": "家人们爆发出一阵欢呼，显然你生来就与财富绑定在一起，这张黑卡理所当然地属于你，即便你还是个在摇篮里嘬手指的婴儿。",
+                            "effect": {
+                                "add_traits": ["挥金如土","富二代"]
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "text": "母亲的顶级收藏名画",
+                "conditions": {},
+                "result": {
+                    "branches": [
+                        {
+                            "conditions": {},
+                            "result_str": "你触摸着刻着浮夸雕文的画框时，家人们对你露出了满意的微笑，你似乎证明了自己不单单是个纨绔子弟，而是天生有着艺术素养的满级人类。",
+                            "effect": {
+                                "add_traits": ["艺术感知","富二代"]
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "text": "令人食指大动的名贵菜肴",
+                "conditions": {},
+                "result": {
+                    "branches": [
+                        {
+                            "conditions": {},
+                            "result_str": "趋向食物是生物的本能，更何况@n只是个小婴儿，谁能苛责你呢？大人们摸了摸@n的头，却仍有人在后方窃窃私语。",
+                            "effect": {
+                                "add_traits": ["大胃袋","富二代"]
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "text": "女仆顺手留在那里的擦灰抹布",
+                "conditions": {},
+                "result": {
+                    "branches": [
+                        {
+                            "conditions": {},
+                            "result_str": "全场瞬间变得哑然无声，你只是觉得湿湿的抹布凉凉的很舒服。父亲把你抱了起来，眼里是尽力掩饰住的失望。不过没关系，抓周仪式本来就是封建迷信罢了，父亲扯走了那块抹布，把他的金表塞进你的手里。",
+                            "effect": {
+                                "add_traits": ["劳动专精"]
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "choose_eye": {
+        "name": "choose_eye",
+        "title": "眼睛颜色",
+        "text": "@n尽力瞪大你的双眼，人们看清了@n眼睛的颜色",
+        "conditions": {
+            "is_son": true
+        },
+        "weight": 256,
+        "options": [
+            {
+                "text": "褐色",
+                "conditions": {},
+                "result": {
+                    "branches": [
+                        {
+                            "conditions": {},
+                            "result_str": "没什么特别的，不过是这个星球上最常见的瞳色罢了。即便如此你仍然睁开了双眼，贪婪地接收着视网膜为你提供的光敏信息。",
+                            "effect": {
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "text": "蓝色",
+                "conditions": {},
+                "result": {
+                    "branches": [
+                        {
+                            "conditions": {},
+                            "result_str": "这个瞳色预示着你不平凡的血脉，也许你是混血，也许你是返祖，很多人喜欢你双眼的颜色，但此时，这过于淡薄的瞳色没能很好地阻挡产房亮眼的灯光。",
+                            "effect": {
+                                "add_traits": ["魅力四射","畏光"]
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "text": "血红色",
+                "conditions": {},
+                "result": {
+                    "branches": [
+                        {
+                            "conditions": {},
+                            "result_str": "那双眼睛，毋庸置疑。你是宇智波家族的血脉，你的母亲在难产中去世，而你的父亲也在悲痛中断气。而在啼哭声中你接受了自己的身世，睁开了那双能看穿一切的眼睛。",
+                            "effect": {
+                                "add_traits": ["写轮眼","孤儿"]
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "text": "彩虹色",
+                "conditions": {},
+                "result": {
+                    "branches": [
+                        {
+                            "conditions": {
+                                "need_sx": 1
+                            },
+                            "result_str": "你那五彩斑斓的胎毛和那在黑暗中仍能发光的彩虹色双眸让在场的人们无不为之倾倒。你一张口，风精灵就为你喝彩；你一啼哭，全医院的医生护士都要来安抚你。一位有着一米九的身高和两米二腿长的霸道总裁在你的襁褓夹层留下了一张字条：“女人，你这是在玩火。”",
+                            "effect": {
+                                "add_traits": ["玛丽苏"]
+                            }
+                        },
+                        {
+                            "conditions": {
+                                "need_sx": 0
+                            },
+                            "result_str": "你那五彩斑斓的胎毛和那在黑暗中仍能发光的彩虹色双眸让在场的人们无不为之倾倒。你一张口，风精灵就为你喝彩；你一啼哭，全医院的医生护士都要来安抚你。一位有着三位数胸臀围和个位数腰围的高冷御姐在你的襁褓夹层留下了一张字条：“你会属于我，男人。”",
+                            "effect": {
+                                "add_traits": ["玛丽苏"]
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "learn_walk": {
+    "name": "learn_walk",
+    "title": "学走路",
+    "text": "@n在___的时候，突然学会了走路",
+    "conditions": {
+        "age_limit_min": 1,
+        "age_limit_max": 4,
+    },
+    "weight": 256,
+    "options": [
+      {
+        "text": "闯祸了被人追着打",
+        "conditions": {},
+        "result": {
+          "branches": [
+            {
+              "conditions": {},
+              "result_str": "你在阳台上对着过路的行人随机投掷一切阳台上能找到的东西，小到架子衣架，大到拖鞋衣杆。你被二十个愤怒的大人紧追不舍时，自然而然地学会了走路乃至跑步。",
+              "effect": {
+                  "add_traits": ["强壮"]
+              }
+            }
+          ]
+        }
+      },
+        {
+        "text": "从书中学习走路",
+        "conditions": {},
+        "result": {
+          "branches": [
+              {
+              "conditions": {},
+              "result_str": "书中自有颜如玉，书中自有黄金屋。你用理论指导实践，成功成为了直立行走的人类。你的学习能力在书中淋漓尽致地体现，你走路的姿势是远近最优美最标准的，每天都有大人用尺子丈量你走路的步伐长短，发现竟然是精确的黄金数。",
+              "effect": {
+                  "add_traits": ["近视","魅力四射"]
+              }
+            },
+            {
+              "conditions": {},
+              "result_str": "书中自有颜如玉，书中自有黄金屋。你用理论指导实践，成功成为了直立行走的人类。",
+              "effect": {
+                  "add_traits": ["近视"]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "text": "吃脚趾",
+        "conditions": {},
+        "result": {
+          "branches": [
+            {
+              "conditions": {},
+              "result_str": "@n在吃脚趾的时候突然学会了走路，甚至能够一边吃一边走，平衡性让大家叹为观止",
+              "effect": {
+                  "add_traits": ["脑洞"]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "text": "模仿电视上mj舞蹈",
+        "conditions": {
+            "no_need_traits": ["贫穷"]
+        },
+        "result": {
+          "branches": [
+            {
+              "conditions": {},
+              "result_str": "就在同龄小朋友们还在学习手脚并用的时候，你已经模仿上了高难度的步伐。看上去轻松潇洒的姿态，就可以让身体平移起来，甚至不需要目视前方",
+              "effect": {
+                  "add_traits": ["太空步"],
+                  "age_up": 1,
+                  "sub_event": "mj_walk_0",
+              }
+            }
+          ]
+        }
+      },
+      {
+        "text": "和狗抢食物吃",
+        "conditions": {
+            "no_need_traits": ["富二代"],
+        },
+        "result": {
+          "branches": [
+            {
+              "conditions": {
+                  "probability": 60
+              },
+              "result_str": "在垃圾堆和那只中华田园犬狭路相逢时，领地本能让你无惧于对其他四足物种发起战争。在漫长的对峙中你略占上风，最后，你抢下了那块发霉一半的午餐肉，仿佛为了回应你的胜利，你进化为了更具统治力的两足物种。",
+              "effect": {
+                  "add_traits": ["好胜"]
+              }
+            },
+              {
+              "conditions": {},
+              "result_str": "在垃圾堆和那只中华田园犬狭路相逢时，领地本能让你无惧于对其他四足物种发起战争。然而，你高估了身体里蕴藏的能量，与一只不知哪来的野狗对战明显不是非常理智的选择。大人们找到你时，你已经迎来了荣誉的结局。",
+              "effect": {
+                  "add_traits": ["死亡"]
+              }
+            }
+          ]
+        }
+      },
+        {
+        "text": "试图与外星人接触",
+        "conditions": {},
+        "result": {
+          "branches": [
+            {
+              "conditions": {
+                  "need_traits": ["天才"]
+              },
+              "result_str": "低效的移动方式无法令你满足，你通过在床单上尿出宇宙语纹路与地外生物交流，他们慷慨地分享了意念起飞的技术。",
+              "effect": {
+                  "add_traits": ["飞行"]
+              }
+            },
+              {
+              "conditions": {},
+              "result_str": "你坚信地球生物的移动方式过于低效，你把目光投向地球之外的物种。但不知是不是你心意不够虔诚，你始终没能收到来自外星人的回信，最后连走路也没学会。",
+              "effect": {
+                  "add_traits": ["轮椅"]
+              }
+            }
+          ]
+        }
+      },
+        {
+        "text": "走路还用学？",
+        "conditions": {},
+        "result": {
+          "branches": [
+            {
+              "conditions": {},
+              "result_str": "是的，对你来说，花时间学习走路简直可笑，天赋异禀的你这种小儿科自然是生下来就会。",
+              "effect": {
+                  "add_traits": ["天才"]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "mj_walk_0": {
+    "name": "mj_walk_0",
+    "title": "太空步1",
+    "text": "你彻底摒弃了直着往前走的大众行为，在日复一日的精进中，你的太空步越来越熟练，你的步伐是那样的潇洒，一跃让你成为孩子们最耀眼的明星。",
+    "conditions": {
+        "is_son": true
+    },
+    "weight": 1,
+    "options": [
+      {
+        "text": "继续",
+        "conditions": {},
+        "result": {
+          "branches": [
+            {
+              "conditions": {},
+              "result_str": "你潜心修炼着太空步的精髓",
+              "effect": {
+                  "add_traits": ["太空步大师","魅力四射"],
+                  "age_up": 1
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "sub_event": "mj_walk_1"
+  },
+  "mj_walk_1": {
+    "name": "mj_walk_1",
+    "title": "太空步2",
+    "text": "伸腿、后滑、换重心，一气呵成。你享受着这种身体控制的感觉，并且愈发炉火纯青。大家的夸赞让你飘然欲仙，你甚至梦到了你与mj同台表演，而他为你签了个价值连城的名。",
+    "conditions": {
+        "is_son": true
+    },
+    "weight": 1,
+    "options": [
+      {
+        "text": "继续",
+        "conditions": {},
+        "result": {
+          "branches": [
+            {
+              "conditions": {},
+              "result_str": "你潜心修炼着太空步的精髓",
+              "effect": {
+                  "add_traits": ["太空步天王"],
+                  "age_up": 1
+              }
+            }
+          ]
+        }
+      }
+    ],
+        "sub_event": "mj_walk_2"
+  },
+  "mj_walk_2": {
+    "name": "mj_walk_2",
+    "title": "太空步3",
+    "text": "那天你如同往常一样用太空步在路上移动着，沉浸在自己的艺术中。在你的脑海里，马路成为了百老汇等级的舞台，来往的行人是为你驻足喝彩的观众。就在你用帅气的动作横穿马路时，受限的视野还是碰了壁。一辆大运为了配合你的演出，只好对你视而不见。你的身体在空中飞舞，完成了今生最后一次谢幕。",
+    "conditions": {
+        "is_son": true
+    },
+    "weight": 1,
+    "options": [
+      {
+        "text": "结束",
+        "conditions": {},
+        "result": {
+          "branches": [
+            {
+              "conditions": {},
+              "result_str": "往好的方向想，至少你真的能和mj同台演出了。",
+              "effect": {
+                  "add_traits": ["死亡"]
+              }
+            }
+          ]
+        }
+      }
+    ],
+  },
+  "baby_daily": {
+    "name": "baby_daily",
+    "title": "幼儿日常",
+    "text": "@n的日常，就是___",
+    "conditions": {
+      "age_limit_min": 1,
+      "age_limit_max": 4
+    },
+    "weight": 256,
+    "options": [
+      {
+        "text": "喜欢看电视",
+        "conditions": {},
+        "result": {
+          "branches": [
+            {
+              "conditions": {},
+              "result_str": "凭着这种好习惯，@n早早就戴上了属于成功人士的眼镜",
+              "effect": {
+                "add_traits": ["近视"]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "text": "对玩具非常着迷",
+        "conditions": {},
+        "result": {
+          "branches": [
+            {
+              "conditions": {},
+              "result_str": "@n痴迷于玩玩具",
+              "effect": {
+                "age_up": 1,
+                "sub_event": "toys"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "text": "喜欢玩耍",
+        "conditions": {},
+        "result": {
+          "branches": [
+            {
+              "conditions": {},
+              "result_str": "@n像每个@a岁的小孩一样",
+              "effect": {
+                "add_traits": ["活泼"]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "text": "喜欢玩平板电脑",
+        "conditions": {},
+        "result": {
+          "branches": [
+            {
+              "conditions": {},
+              "result_str": "@n从小就擅长摆弄电子产品，@x最喜欢的游戏是小X鱼爱洗澡和X雪大X险",
+              "effect": {
+                "add_traits": ["近视","技术宅"]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "text": "经常安静地呆着",
+        "conditions": {},
+        "result": {
+          "branches": [
+            {
+              "conditions": {},
+              "result_str": "大人们一度以为@n不会说话",
+              "effect": {
+                "add_traits": ["内向"]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "toys": {
+    "name": "toys",
+    "title": "玩玩具",
+    "text": "喜欢玩玩具的@n，最喜欢的玩具是___",
+    "conditions": {
+      "age_limit_min": 1,
+      "age_limit_max": 6
+    },
+    "weight": 256,
+    "options": [
+      {
+        "text": "十万片的拼图",
+        "conditions": {},
+        "result": {
+          "branches": [
+            {
+              "conditions": {},
+              "result_str": "@n喜欢心无旁骛地连玩一个月的拼图，每一片都细碎的像是沙子",
+              "effect": {
+                "add_traits": ["记忆"]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "text": "四驱车",
+        "conditions": {},
+        "result": {
+          "branches": [
+            {
+              "conditions": {},
+              "result_str": "@n最喜欢追寻速度的感觉。@x每天一边摇控车辆横冲直撞，一边因为东西被撞倒而担惊受怕。",
+              "effect": {
+                "add_traits": ["淘气"]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "text": "高达",
+        "conditions": {},
+        "result": {
+          "branches": [
+            {
+              "conditions": {},
+              "result_str": "@n年仅@a岁就会熟练使用工具拼装模型，最近正在研究喷漆",
+              "effect": {
+                "add_traits": ["心灵手巧"]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "text": "二踢脚",
+        "conditions": {},
+        "result": {
+          "branches": [
+            {
+              "conditions": {},
+              "result_str": "@n喜欢到处丢爆炸物，@x把附近农户家的牛粪炸的哪里都是",
+              "effect": {
+                "add_traits": ["胆大"]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "text": "电子烟",
+        "conditions": {},
+        "result": {
+          "branches": [
+            {
+              "conditions": {},
+              "result_str": "@n从小就沾染了纯真习惯，噫，唔！总是把家里弄得云里雾里",
+              "effect": {
+                "add_traits": ["烟瘾"]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "text": "菜刀",
+        "conditions": {},
+        "result": {
+          "branches": [
+            {
+              "conditions": {},
+              "result_str": "@n喜欢趁没人看管的时候去厨房把玩刀具，用刀背砸来砸去。人在河边走，那有不湿鞋，一次@n拿起了家里的切肉刀，手一软就往自己的面门劈去……",
+              "effect": {
+                "add_traits": ["死亡"]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "text": "玩什么玩具，看书！",
+        "conditions": {},
+        "result": {
+          "branches": [
+            {
+              "conditions": {},
+              "result_str": "@n沉浸在书本的世界里",
+              "effect": {
+                "add_traits": ["尖子生"]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  " ": { //这是一个最小事件的格式，您可以从这个基本格式开始，逐渐添加来完成您的事件
+    "name": "minimal",
+    "title": "最小事件",
+    "text": "只有一个选项，没有任何条件",
+    "conditions": {},
+    "weight": 1,
+    "options": [
+      {
+        "text": "继续",
+        "conditions": {},
+        "result": {
+          "branches": [
+            {
+              "conditions": {},
+              "result_str": "你完成了这个事件。",
+              "effect": {}
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

@@ -25,7 +25,12 @@ cd main
 ### 方式二
 #### 前置条件 
 - Python 3.10 或更高
-- 安装依赖：`pip install blessed`
+- 安装依赖：  
+>1. pip install blessed
+>2. pip install json5
+>3. pip install pyyaml
+
+
 #### 启动游戏
 ```bash
 # 克隆仓库（也可以手动下载）

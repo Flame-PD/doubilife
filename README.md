@@ -38,6 +38,8 @@ git clone https://github.com/Flame-PD/doubilife.git
 cd doubilife
 # 安装依赖
 pip install blessed
+pip install json5
+pip install pyyaml
 #运行
 python main.py
 ```

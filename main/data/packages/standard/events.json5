@@ -731,24 +731,142 @@
       }
     ]
   },
-  " ": { //这是一个最小事件的格式，您可以从这个基本格式开始，逐渐添加来完成您的事件
-    "name": "minimal",
-    "title": "最小事件",
-    "text": "只有一个选项，没有任何条件",
-    "conditions": {},
-    "weight": 1,
+  "zoo": { //这是一个最小事件的格式，您可以从这个基本格式开始，逐渐添加来完成您的事件
+    "name": "zoo",
+    "title": "动物园",
+    "text": "@n在@a岁的时候去了动物园，@x很喜欢___，并伸手摸了摸",
+    "conditions": {
+      "age_limit_min":3,
+      "age_limit_max":8
+    },
+    "weight": 256,
     "options": [
       {
-        "text": "继续",
+        "text": "斑马",
         "conditions": {},
         "result": {
           "branches": [
             {
               "conditions": {},
-              "result_str": "你完成了这个事件。",
+              "result_str": "斑马是黑底白纹，还是白底黑纹？小小的@n已经开始思考这种艰深的问题了。",
               "effect": {}
             }
           ]
+        }
+      },
+      {
+        "text": "猴子",
+        "conditions": {},
+        "result": {
+        "branches": [
+          {
+            "conditions": {},
+            "result_str": "人真的是从猴子进化来的吗？@n对此深表怀疑，面前的猴子发现@x并没有香蕉之后，气愤的离开了。",
+            "effect": {}
+          }
+        ]
+        }
+      },
+
+      {
+        "text": "企鹅",
+        "conditions": {},
+        "result": {
+        "branches": [
+          {
+          "conditions": {},
+          "result_str": "咕咕嘎嘎，咕咕嘎嘎。",
+          "effect": {}
+          }
+        ]
+        }
+      },
+      {
+        "text": "老虎",
+        "conditions": {},
+        "result": {
+        "branches": [
+          {
+          "conditions": {},
+          "result_str": "@n摸了摸老虎的屁股，其实手感还不错，只可惜@x还没来的及回味这种手感，就已经被血盆大口咬住。",
+          "effect": {
+            "add_traits":["死亡"]
+            }
+          }
+        ]
+        }
+      },
+      {
+        "text": "老虎",
+        "conditions": {},
+        "result": {
+        "branches": [
+          {
+          "conditions": {},
+          "result_str": "@n摸了摸狮子的屁股，其实手感还不错，只可惜@x还没来的及回味这种手感，就已经被血盆大口咬住。",
+          "effect": {
+            "add_traits":["死亡"]
+            }
+          }
+        ]
+        }
+      },
+      {
+        "text": "眼镜蛇",
+        "conditions": {},
+        "result": {
+          "branches": [
+            {
+              "conditions": {},
+              "result_str": "@n和许多小朋友一样，好奇眼镜蛇的“眼镜”是哪来的。@x伸手摸了摸眼镜蛇的脑袋，对方温柔地用牙齿咬了咬@n，@n死的时候还在笑呢。",
+              "effect": {
+                "add_traits":["死亡"]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "text":"独角兽",
+        "conditions":{},
+        "result":{
+          "branches":[
+            {
+              "conditions":{
+                "need_traits":["玛丽苏"]
+              },
+              "result_str":"独角兽俯下了它的高傲的脑袋，允许@n摸了摸对方的角，一股七色的光芒笼罩了@n，在场的人都忍不住鼓起掌来。",
+              "effect":{
+                "add_traits":["高洁"]
+              }              
+            },
+            {
+              "conditions":{
+                "probability":50
+              },
+              "result_str":"独角兽俯下了它的高傲的脑袋，允许@n摸了摸对方的角，一股七色的光芒笼罩了@n，在场的人都忍不住鼓起掌来。",
+              "effect":{
+                "add_traits":["高洁"]
+              }
+            },
+            {
+              "conditions":{
+              },
+              "result_str":"独角兽俯下了它的高傲的脑袋，然而，面前的@n显然并不被认可，或许是灵魂中的污浊玷污了对方，总之，独角兽对@n干了点掏心窝子的事情。",
+              "effect":{
+                "add_traits":["死亡"]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "text":"皮卡丘",
+        "conditions":{},
+        "result":{
+          "conditions":{},
+          "result_str":"皮卡丘发出“皮卡皮卡”的声音",
+          "effect":{}
         }
       }
     ]
